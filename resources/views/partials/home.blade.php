@@ -7,7 +7,7 @@
             <h1>Welcome to <span>BizLand</span></h1>
             <p>We are team of talented designers making websites with Bootstrap</p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started">Log In</a>
+              <a href="{{ route('login') }}" class="btn-get-started">Log In</a>
             </div>
           </div>
         </div>
