@@ -1,5 +1,7 @@
+<div class="main-panel">
+
 <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+            <nav class="navbar navbar-expand navbar-light light-blue-bg topbar mb-4 static-top">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
                         <div class="navbar-toggle">
@@ -9,7 +11,6 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="#pablo">Dashboard</a>
                     </div>
                     
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
@@ -20,10 +21,8 @@
                                         <p>Vaidip Patel</p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here </a>
-                                    <a class="dropdown-item" href="#"><i class="ti ti-power text-danger"></i></a>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"><i class="fa-solid fa-power-off" style="color: #ff0000;"></i> Log out</a>
                                 </div>
                             </li>
                         </ul>

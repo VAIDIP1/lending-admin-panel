@@ -40,20 +40,25 @@
             <div class="d-flex justify-content-center mb-4">
               <h3 class="mb-0"><b>Log In</b></h3>
             </div>
+          <form method="POST" action="{{ route('admin.login.post') }}" class="js-validation-material user">
+            @csrf
             <div class="form-group mb-3">
               <label class="form-label">Email Address</label>
-              <input type="email" class="form-control" placeholder="Email Address">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
             </div>
             <div class="form-group mb-3">
               <label class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+              <i class="fas fa-eye toggle-password" id="togglePassword"></i>
             </div>
-            <div class="d-flex mt-1 justify-content-end">
+            <div class="d-flex mt-1 justify-content-between login-details">
+                <h5 class="text-secondary f-w-400"><a href="{{ route('register') }}">Don't have account?</a></h5>
               <h5 class="text-secondary f-w-400">Forgot Password?</h5>
             </div>
             <div class="d-grid mt-4">
-              <button type="button" class="btn btn-primary">Login</button>
+              <button type="submit" class="btn btn-primary login-btn">Login</button>
             </div>
+          </form>
           </div>
         </div>
         <div class="auth-footer row">
@@ -73,8 +78,16 @@
       </div>
     </div>
   </div>
-  <!-- [ Main Content ] end -->
-</body>
-<!-- [Body] end -->
+<script>
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('password');
 
+  togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+  });
+</script>
+</body>
 </html>

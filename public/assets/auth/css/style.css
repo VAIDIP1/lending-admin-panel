@@ -383,9 +383,15 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  color: #000;
   text-decoration: none;
 }
+
+.card-body .login-details a {
+  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+  text-decoration: none;
+}
+
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
   text-decoration: underline;
@@ -2083,10 +2089,13 @@ progress {
 .form-control[type=file]:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
+.is_required {
+  color: #FB5E5B;
+}
 .form-control:focus {
   color: #212529;
   background-color: #f8f9fa;
-  border-color: var(--bs-primary);
+  border-color: #452781;
   outline: 0;
   box-shadow: 0 0 0 2px rgba(var(--bs-primary-rgb), 0.1);
 }
@@ -3357,7 +3366,7 @@ textarea.form-control-lg {
   --bs-dropdown-link-hover-color: var(--bs-dropdown-link-color);
   --bs-dropdown-link-hover-bg: #e9ecef;
   --bs-dropdown-link-active-color: var(--bs-dropdown-link-color);
-  --bs-dropdown-link-active-bg: var(--pc-active-background);
+  --bs-dropdown-link-active-bg: #452781;
   --bs-dropdown-link-disabled-color: #6c757d;
   --bs-dropdown-item-padding-x: 1.5rem;
   --bs-dropdown-item-padding-y: 0.65rem;
@@ -3623,7 +3632,7 @@ textarea.form-control-lg {
   --bs-dropdown-divider-bg: #e9ecef;
   --bs-dropdown-link-hover-bg: rgba(255, 255, 255, 0.15);
   --bs-dropdown-link-active-color: var(--bs-dropdown-link-color);
-  --bs-dropdown-link-active-bg: var(--pc-active-background);
+  --bs-dropdown-link-active-bg: #452781;
   --bs-dropdown-link-disabled-color: #adb5bd;
   --bs-dropdown-header-color: #adb5bd;
 }
@@ -14846,10 +14855,6 @@ a:not([href]) {
   color: inherit;
 }
 
-p {
-  font-size: 14px;
-}
-
 h6,
 .h6,
 h5,
@@ -16736,7 +16741,7 @@ pre[class*=language-] > code {
   cursor: pointer;
 }
 .pc-header .dropdown-notification .card:hover {
-  background: var(--pc-active-background);
+  background: #452781;
 }
 @media (max-width: 575.98px) {
   .pc-header .dropdown-notification {
@@ -20410,8 +20415,8 @@ pre[class*=language-] > code {
   align-items: center;
 }
 .dropdown .dropdown-item.active, .dropdown .dropdown-item:active, .dropdown .dropdown-item:focus, .dropdown .dropdown-item:hover {
-  background: var(--pc-active-background);
-  color: var(--bs-dropdown-link-color);
+  background: #452781;
+  color: #ffffff;
 }
 .dropdown .dropdown-item.active i.material-icons-two-tone, .dropdown .dropdown-item:active i.material-icons-two-tone, .dropdown .dropdown-item:focus i.material-icons-two-tone, .dropdown .dropdown-item:hover i.material-icons-two-tone {
   background-color: var(--bs-dropdown-link-color);
@@ -22084,6 +22089,36 @@ select.form-control[data-multiselectsplitter-firstselect-selector], select.form-
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.login-btn {
+  background-color: #ffffff;
+  color: #452781;
+  font-weight: 600;
+  font-size: 15px;
+  border-color: #452781;
+  border-radius: 20px;
+}
+
+.login-btn:hover {
+  background-color: #452781;
+  color: #ffffff;
+  border-color: #452781;
+}
+
+.register-btn {
+  background-color: #ffffff;
+  color: #452781;
+  font-weight: 600;
+  font-size: 15px;
+  border-color: #452781;
+  border-radius: 20px;
+}
+
+.register-btn:hover {
+  background-color: #452781;
+  color: #ffffff;
+  border-color: #452781;
 }
 
 /**====== Authentication css end ======**/
