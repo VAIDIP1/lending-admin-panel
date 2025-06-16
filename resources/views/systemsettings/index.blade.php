@@ -42,10 +42,9 @@
             <!-- /.col -->
           <div class="col-12">
             <div class="card">
-                <div class="card-header" style="visibility:hidden;">
-                  <a class="btn btn-primary btn-sm float-right" href="#"><em class="fa fa-plus"></em> {{ __('messages.add_label') }}</a>
+                <div class="card-header">
+                  <a class="btn btn-primary btn-sm float-right" href="{{ route('systemsettings.create') }}"><em class="fa fa-plus"></em> Add</a>
                 </div>
-             
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="dataTables-systemsettings-example" class="table table-bordered table-striped">
@@ -78,6 +77,7 @@
     <!-- /.content -->
   </div>
 </div>
+
 <script>
 $(document).ready(function() {
     let ajax_url = "{{ url('allsystemsettings') }}";

@@ -46,10 +46,15 @@
               <label class="form-label">Email Address</label>
               <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
             </div>
+            <!-- Password Field -->
             <div class="form-group mb-3">
               <label class="form-label">Password</label>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-              <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+              <div class="input-group">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                <span class="input-group-text">
+                  <i class="fas fa-eye toggle-password" id="togglePassword" style="cursor: pointer;"></i>
+                </span>
+              </div>
             </div>
             <div class="d-flex mt-1 justify-content-between login-details">
                 <h5 class="text-secondary f-w-400"><a href="{{ route('register') }}">Don't have account?</a></h5>

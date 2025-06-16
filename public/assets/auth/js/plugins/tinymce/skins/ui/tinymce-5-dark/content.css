@@ -564,22 +564,7 @@ div.mce-footnotes li > a.mce-footnotes-backlink {
 .mce-content-body img[data-mce-selected]::selection {
   background: none;
 }
-.ephox-snooker-resizer-bar {
-  background-color: #4099ff;
-  opacity: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.ephox-snooker-resizer-cols {
-  cursor: col-resize;
-}
-.ephox-snooker-resizer-rows {
-  cursor: row-resize;
-}
-.ephox-snooker-resizer-bar.ephox-snooker-resizer-bar-dragging {
-  opacity: 1;
-}
+
 .mce-spellchecker-word {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D'4'%20height%3D'4'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath%20stroke%3D'%23ff0000'%20fill%3D'none'%20stroke-linecap%3D'round'%20stroke-opacity%3D'.75'%20d%3D'M0%203L2%201%204%203'%2F%3E%3C%2Fsvg%3E%0A");
   background-position: 0 calc(100% + 1px);

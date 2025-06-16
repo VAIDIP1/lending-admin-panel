@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SystemsettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Container\Attributes\Auth;

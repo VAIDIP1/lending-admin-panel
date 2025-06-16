@@ -34,6 +34,12 @@ class SystemsettingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function create()
+    {
+        return view('systemsettings.create');
+    }
+    
     public function store(Request $request)
     {
         request()->validate([
@@ -43,14 +49,14 @@ class SystemsettingController extends Controller
             'mobile' => 'required|max:30',
             'address1' => 'nullable|max:255',
             'address2' => 'nullable|max:255',
-            'logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'favicon' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'facebook_url' => 'required|url|max:255',
-            'twitter_url' => 'required|url|max:255',
-            'linkedin_url' => 'required|url|max:255',
-            'instagram_url' => 'required|url|max:255',
-            'stripe_publish_key' => 'required',
-            'stripe_secret_key' => 'required',
+            // 'logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            // 'favicon' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            // 'facebook_url' => 'required|url|max:255',
+            // 'twitter_url' => 'required|url|max:255',
+            // 'linkedin_url' => 'required|url|max:255',
+            // 'instagram_url' => 'required|url|max:255',
+            // 'stripe_publish_key' => 'required',
+            // 'stripe_secret_key' => 'required',
         ]);
         Systemsetting::create($request->all());
 
@@ -186,7 +192,7 @@ class SystemsettingController extends Controller
                 $data[] = $nestedData;
             }
         }
-
+        
         $json_data = array(
                     "draw"            => intval($request->input('draw')),
                     "recordsTotal"    => intval($totalData),

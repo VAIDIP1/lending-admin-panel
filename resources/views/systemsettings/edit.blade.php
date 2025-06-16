@@ -66,73 +66,74 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                 {!! Form::model($systemsetting, ['method' => 'PATCH','enctype' =>"multipart/form-data", 'route' => ['systemsettings.update', $systemsetting->id], 'class' => 'js-validation-material']) !!}
+                 <form method="POST" action="/admin/systemsettings/{{ $systemsetting->id }}" enctype="multipart/form-data" class="js-validation-material">
+                    @csrf
                     @csrf
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Name <span class="required_sign">*</span></strong>
-                                {!! Form::text('name', $systemsetting->name, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                                <input type="text" name="name" value="{{ $systemsetting->name }}" placeholder="Name" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Email <span class="required_sign">*</span></strong>
-                                {!! Form::text('email', $systemsetting->email, array('placeholder' => 'Email','class' => 'form-control')) !!}
+                                <input type="text" name="email" value="{{ $systemsetting->email }}" placeholder="Email" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Mobile <span class="required_sign">*</span></strong>
-                                {!! Form::text('mobile', $systemsetting->mobile, array('placeholder' => 'Mobile','class' => 'form-control')) !!}
+                                <input type="text" name="mobile" value="{{ $systemsetting->mobile }}" placeholder="Mobile" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Phone <span class="required_sign">*</span></strong>
-                                {!! Form::text('phone', $systemsetting->phone, array('placeholder' => 'Phone','class' => 'form-control')) !!}
+                                <input type="text" name="phone" value="{{ $systemsetting->phone }}" placeholder="Phone" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Address 1 <span class="required_sign">*</span></strong>
-                                {!! Form::text('address1', $systemsetting->address1, array('placeholder' => 'Address 1','class' => 'form-control')) !!}
+                                <input type="text" name="address1" value="{{ $systemsetting->address1 }}" placeholder="Address 1" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Address 2 <span class="required_sign">*</span></strong>
-                                {!! Form::text('address2', $systemsetting->address2, array('placeholder' => 'Address 2','class' => 'form-control')) !!}
+                                <input type="text" name="address2" value="{{ $systemsetting->address2 }}" placeholder="Address 2" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Facebook URL <span class="required_sign">*</span></strong>
-                                {!! Form::text('facebook_url', $systemsetting->facebook_url, array('placeholder' => 'Facebook URL','class' => 'form-control')) !!}
+                                <input type="text" name="facebook_url" value="{{ $systemsetting->facebook_url }}" placeholder="Facebook URL" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Twitter URL <span class="required_sign">*</span></strong>
-                                {!! Form::text('twitter_url', $systemsetting->twitter_url, array('placeholder' => 'Twitter URL','class' => 'form-control')) !!}
+                                <input type="text" name="twitter_url" value="{{ $systemsetting->twitter_url }}" placeholder="Twitter URL" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>LinkedIn URL <span class="required_sign">*</span></strong>
-                                {!! Form::text('linkedin_url', $systemsetting->linkedin_url, array('placeholder' => 'LinkedIn URL','class' => 'form-control')) !!}
+                                <input type="text" name="linkedin_url" value="{{ $systemsetting->linkedin_url }}" placeholder="LinkedIn URL" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Instagram URL <span class="required_sign">*</span></strong>
-                                {!! Form::text('instagram_url', $systemsetting->instagram_url, array('placeholder' => 'Instagram URL','class' => 'form-control')) !!}
+                                <input type="text" name="instagram_url" value="{{ $systemsetting->instagram_url }}" placeholder="Instagram URL" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Default Template <span class=""></span></strong>
-                                {!! Form::text('default_template', $systemsetting->default_template, array('placeholder' => 'Default Template','class' => 'form-control')) !!}
+                                <input type="text" name="default_template" value="{{ $systemsetting->default_template }}" placeholder="Default Template" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -140,11 +141,11 @@
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Logo <span class="required_sign">*</span></strong>
-                                {!! Form::file('logo_file', null, array('class' => 'form-control')) !!}
+                                <input type="file" name="logo_file" class="form-control">
                                
                                 @if($systemsetting->logo && File::exists(public_path('uploads/'.$systemsetting->logo)))
                                     <img id="original" src="{{ url('uploads/'.$systemsetting->logo) }}" height="100" width="100" alt="Logo" title="Logo">
-                                    {!! Form::hidden('old_logo_file', $systemsetting->logo, array('class' => 'form-control')) !!}
+                                    <input type="hidden" name="old_logo_file" value="{{ $systemsetting->logo }}" class="form-control">
                                 @else
                                     <img src="/uploads/no-image.svg" height="100" width="100" alt="No Preview" title="Default-Image"/>
                                 @endif
@@ -153,11 +154,11 @@
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Favicon <span class="required_sign">*</span></strong>
-                                {!! Form::file('favicon_file', null, array('class' => 'form-control')) !!}
+                                <input type="file" name="favicon_file" class="form-control">
                               
                                  @if($systemsetting->favicon && File::exists(public_path('uploads/'.$systemsetting->favicon)))
                                     <img id="original" src="{{ url('uploads/'.$systemsetting->favicon) }}" height="50" width="50" alt="Logo" title="Logo">
-                                    {!! Form::hidden('old_favicon_file', $systemsetting->favicon, array('class' => 'form-control')) !!}
+                                    <input type="hidden" name="old_favicon_file" value="{{ $systemsetting->favicon }}" class="form-control">
                                  @else
                                     <img src="/uploads/no-image.svg" height="100" width="100" alt="No Preview" title="Default-Image"/>
                                 @endif
@@ -167,7 +168,7 @@
                             <button type="submit" class="btn btn-primary btn-sm">{!! __('messages.submit_label') !!}</button>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                 </form>
               </div>
               <!-- /.card-body -->
             </div>
